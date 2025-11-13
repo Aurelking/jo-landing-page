@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* =========================================
+   🎨 Thème JO 2026 – Clair & Sombre
+   ========================================= */
+
+@layer base {
+    :root {
+        /* Couleurs principales */
+        --background: 210 20% 98%;
+        --foreground: 220 13% 15%;
+
+        --card: 0 0% 100%;
+        --card-foreground: 220 13% 15%;
+
+        --popover: 0 0% 100%;
+        --popover-foreground: 220 13% 15%;
+        /* Couleurs JO */
+        --primary: 272, 63%, 46%;           /* Violet JO */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 199, 63%, 73%;          /* Bleu JO  */
+        --secondary-foreground: 220 13% 15%;
+
+        --accent: 180 60% 45%;             /* Vert d'accent doux (#00BFA6) */
+        --accent-foreground: 0 0% 100%;
+
+        /* États neutres */
+        --muted: 210 16% 92%;
+        --muted-foreground: 220 9% 46%;
+
+        --border: 210 16% 90%;
+        --input: 210 16% 90%;
+        --ring: 217 100% 50%;
+
+        /* Rayon de bordure */
+        --radius: 0.5rem;
+    }
+
+    /* 🌙 Mode sombre */
+    .dark {
+        --background: 220 13% 10%;
+        --foreground: 210 20% 98%;
+
+        --card: 220 13% 13%;
+        --card-foreground: 210 20% 98%;
+
+        --popover: 220 13% 13%;
+        --popover-foreground: 210 20% 98%;
+
+        --primary: 217 100% 65%;           /* Bleu légèrement plus clair */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 45 90% 55%;           /* Jaune adouci */
+        --secondary-foreground: 220 13% 15%;
+
+        --accent: 180 50% 50%;             /* Vert doux */
+        --accent-foreground: 0 0% 100%;
+
+        --muted: 220 10% 22%;
+        --muted-foreground: 210 10% 70%;
+
+        --border: 220 10% 22%;
+        --input: 220 10% 22%;
+        --ring: 217 100% 65%;
+
+    }
+
+}
+
+
+.shadow-light {
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.08);
+}
+
+.shadow-dark {
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.15);
+}
+
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground font-sans;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold text-foreground;
+    }
+
+    a {
+        @apply text-primary hover:text-secondary transition-colors;
+    }
+
+    button {
+        @apply font-medium;
+    }
+}
