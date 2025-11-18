@@ -18,7 +18,7 @@ interface CityProps {
 
 const cityList: CityProps[] = [
     {
-        image: "/cityimages/marseille.png",
+        image: "/cityImages/marseille.png",
         title: "Marseille",
         date: "Samedi 15 mars 2025",
         fullDate: new Date("2025-03-15"),
@@ -28,7 +28,7 @@ const cityList: CityProps[] = [
             "Métro M2 (arrêt Noailles), Tram T1 (arrêt Réformés Canebière), Gare Saint-Charles à 10 min à pied.",
     },
     {
-        image: "/cityimages/toulon.png",
+        image: "/cityImages/toulon.png",
         title: "Toulon",
         date: "Samedi 22 mars 2025",
         fullDate: new Date("2025-03-22"),
@@ -38,7 +38,7 @@ const cityList: CityProps[] = [
             "Bus Réseau Mistral (lignes 3, 7, 15, arrêt Mayol), Gare SNCF Toulon à 15 min à pied.",
     },
     {
-        image: "/cityimages/nice.png",
+        image: "/cityImages/nice.png",
         title: "Nice",
         date: "Samedi 29 mars 2025",
         fullDate: new Date("2025-03-29"),
@@ -48,7 +48,7 @@ const cityList: CityProps[] = [
             "Tramway Ligne 2 (arrêt Alsace-Lorraine), bus lignes 12/32, Gare Nice-Ville à 10 min.",
     },
     {
-        image: "/cityimages/avignon.png",
+        image: "/cityImages/avignon.png",
         title: "Avignon",
         date: "Samedi 5 avril 2025",
         fullDate: new Date("2025-04-05"),
@@ -110,7 +110,7 @@ export const ProgrammesSection = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <Image
-                            src="/cityimages/marseille.png"
+                            src="/cityImages/marseille.png"
                             alt="Marseille"
                             fill
                             className="object-cover"
@@ -134,7 +134,7 @@ export const ProgrammesSection = () => {
                         }}
                     >
                         <Image
-                            src="/cityimages/nice.png"
+                            src="/cityImages/nice.png"
                             alt="Nice"
                             fill
                             className="object-cover"
@@ -158,7 +158,7 @@ export const ProgrammesSection = () => {
                         }}
                     >
                         <Image
-                            src="/cityimages/avignon.png"
+                            src="/cityImages/avignon.png"
                             alt="Avignon"
                             fill
                             className="object-cover"
@@ -182,7 +182,7 @@ export const ProgrammesSection = () => {
                         }}
                     >
                         <Image
-                            src="/cityimages/toulon.png"
+                            src="/cityImages/toulon.png"
                             alt="Toulon"
                             fill
                             className="object-cover"

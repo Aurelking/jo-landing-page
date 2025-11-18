@@ -1,16 +1,9 @@
 import { BenefitsSection } from "@/components/layout/sections/benefits";
-import { CommunitySection } from "@/components/layout/sections/community";
 import { ContactSection } from "@/components/layout/sections/contact";
-import { FAQSection } from "@/components/layout/sections/faq";
 import { ProgrammesSection } from "@/components/layout/sections/ProgrammesSection";
 import { FooterSection } from "@/components/layout/sections/footer";
 import { HeroSection } from "@/components/layout/sections/hero";
-import { PricingSection } from "@/components/layout/sections/pricing";
-import { ServicesSection } from "@/components/layout/sections/services";
-import { SponsorsSection } from "@/components/layout/sections/sponsors";
-import { TeamSection } from "@/components/layout/sections/team";
-import { TestimonialSection } from "@/components/layout/sections/testimonial";
-import {AgendaSection} from "@/components/layout/sections/agenda";
+
 import {AboutSection} from "@/components/layout/sections/about";
 
 export const metadata = {
