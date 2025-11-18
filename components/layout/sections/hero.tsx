@@ -69,9 +69,7 @@ export const HeroSection = () => {
                             className="w-5/6 md:w-auto font-bold text-white group"
                         >
                             <Link
-                                href="https://github.com/nobruf/shadcn-landing-page.git"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="#contact"
                                 className="flex items-center gap-2"
                             >
                                 <span>Je m'inscris</span>
