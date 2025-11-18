@@ -107,7 +107,7 @@ export const ContactSection = () => {
                                 <Mail />
                                 <div className="font-bold">Email</div>
                             </div>
-                            <div>journeedorientation5@gmail.com</div>
+                            <div>orientationjdn@gmail.com</div>
                         </div>
                     </div>
                 </div>
