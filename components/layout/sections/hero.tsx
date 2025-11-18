@@ -92,12 +92,12 @@ export const HeroSection = () => {
                         autoPlay
                         loop
                         muted
+                        controls={true}
                         playsInline
-                        className="w-full md:w-[1200px] mx-auto rounded-lg relative leading-none border border-t-2 border-secondary border-t-primary/30"
-                        src="/video2.mp4"
+                        className="w-full md:w-[1300px] mx-auto rounded-lg relative leading-none border border-t-2 border-secondary border-t-primary/30"
+                        src="/video.MOV"
                     />
 
-                    <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>
                 </div>
             </div>
         </section>
