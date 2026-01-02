@@ -38,8 +38,8 @@ const cityList: CityProps[] = [
             "Bus Réseau Mistral (lignes 3, 7, 15, arrêt Mayol), Gare SNCF Toulon à 15 min à pied.",
     },
     {
-        image: "/cityImages/nice.png",
-        title: "Nice",
+        image: "/cityImages/martigues.png",
+        title: "Martigues",
         date: "Samedi 29 mars 2025",
         fullDate: new Date("2026-03-29"),
         location: "Centre Universitaire Méditerranéen (CUM)",
@@ -348,7 +348,6 @@ export const ProgrammesSection = () => {
                         </div>
                     </motion.div>
             </div>
-                {/* Section droite - Infos pratiques et prochain événement */}
 
         </section>
     );

@@ -74,7 +74,7 @@ export const AboutSection = () => {
                     transition={{ duration: 0.8 }}
                     className="relative"
                 >
-                    <div className="relative rounded-xl overflow-hidden shadow-2xl h-[800px] ">
+                    <div className="relative rounded-xl overflow-hidden shadow-2xl  h-[500px] lg:h-[900px] ">
                         <AnimatePresence mode="wait">
                             <motion.div
                                 key={currentImageIndex}
