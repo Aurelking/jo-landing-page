@@ -2,7 +2,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle2, Sparkles, Users, Target, Lightbulb } from "lucide-react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const features = [
     {
@@ -23,7 +24,25 @@ const features = [
     },
 ];
 
+const carouselImages = [
+    { src: "/flyers.png", alt: "Flyer JO 1" },
+    { src: "/flyers2.png", alt: "Flyer JO 2" },
+    { src: "/flyers3.png", alt: "Flyer JO 3" },
+];
+
 export const AboutSection = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImageIndex((prevIndex) =>
+                (prevIndex + 1) % carouselImages.length
+            );
+        }, 4000); // Change d'image toutes les 4 secondes
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section id="about" className="container py-24 sm:py-32 relative overflow-hidden">
             {/* Effets de fond décoratifs */}
@@ -46,8 +65,8 @@ export const AboutSection = () => {
                 </h2>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
-                {/* Image à gauche */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center mb-20 h-full">
+                {/* Carousel à gauche */}
                 <motion.div
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -55,22 +74,39 @@ export const AboutSection = () => {
                     transition={{ duration: 0.8 }}
                     className="relative"
                 >
-                    <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                        <Image
-                            src="/img.png" // Remplacez par votre image
-                            alt="Événement JO"
-                            width={600}
-                            height={400}
-                            className="object-cover w-full h-[400px]"
-                        />
-                        {/* Overlay décoratif */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                    </div>
-                    {/* Badge flottant */}
-                    <div className="absolute -bottom-6 -right-6 bg-white dark:bg-card p-6 rounded-2xl shadow-xl border-2 border-primary/20">
-                        <div className="text-center">
-                            <div className="text-4xl font-bold text-primary">2026</div>
-                            <div className="text-sm text-muted-foreground">Édition</div>
+                    <div className="relative rounded-xl overflow-hidden shadow-2xl h-[800px] ">
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={currentImageIndex}
+                                initial={{ opacity: 0, x: 100 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: -100 }}
+                                transition={{ duration: 0.5 }}
+                                className="absolute inset-0"
+                            >
+                                <Image
+                                    src={carouselImages[currentImageIndex].src}
+                                    alt={carouselImages[currentImageIndex].alt}
+                                    fill
+                                    className="object-fill w-full h-full"
+                                />
+                            </motion.div>
+                        </AnimatePresence>
+
+                        {/* Indicateurs de pagination */}
+                        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+                            {carouselImages.map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setCurrentImageIndex(index)}
+                                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                        index === currentImageIndex
+                                            ? "bg-white w-8"
+                                            : "bg-white/50 hover:bg-white/75"
+                                    }`}
+                                    aria-label={`Aller à l'image ${index + 1}`}
+                                />
+                            ))}
                         </div>
                     </div>
                 </motion.div>

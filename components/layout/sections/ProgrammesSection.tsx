@@ -20,8 +20,8 @@ const cityList: CityProps[] = [
     {
         image: "/cityImages/marseille.png",
         title: "Marseille",
-        date: "Samedi 15 mars 2025",
-        fullDate: new Date("2025-03-15"),
+        date: "31 Janvier 2026",
+        fullDate: new Date("2026-01-31"),
         location: "Maison de la Jeunesse et de la Culture",
         address: "16 Rue Bernard du Bois, 13001 Marseille",
         access:
@@ -30,8 +30,8 @@ const cityList: CityProps[] = [
     {
         image: "/cityImages/toulon.png",
         title: "Toulon",
-        date: "Samedi 22 mars 2025",
-        fullDate: new Date("2025-03-22"),
+        date: "21 Février 2026",
+        fullDate: new Date("2026-02-21"),
         location: "Palais des Congrès Neptune",
         address: "Place Besagne, 83000 Toulon",
         access:
@@ -41,7 +41,7 @@ const cityList: CityProps[] = [
         image: "/cityImages/nice.png",
         title: "Nice",
         date: "Samedi 29 mars 2025",
-        fullDate: new Date("2025-03-29"),
+        fullDate: new Date("2026-03-29"),
         location: "Centre Universitaire Méditerranéen (CUM)",
         address: "65 Promenade des Anglais, 06000 Nice",
         access:
@@ -50,8 +50,8 @@ const cityList: CityProps[] = [
     {
         image: "/cityImages/avignon.png",
         title: "Avignon",
-        date: "Samedi 5 avril 2025",
-        fullDate: new Date("2025-04-05"),
+        date: "28 Février 2026",
+        fullDate: new Date("2026-02-28"),
         location: "Palais des Papes – Centre de Congrès",
         address: "Place du Palais, 84000 Avignon",
         access:
@@ -117,7 +117,7 @@ export const ProgrammesSection = () => {
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4">
                             <h3 className="text-white font-bold text-xl">Marseille</h3>
-                            <p className="text-white/80 text-sm">15 mars 2025</p>
+                            <p className="text-white/80 text-sm">31 Janvier 2026</p>
                         </div>
                     </motion.div>
 
@@ -134,14 +134,14 @@ export const ProgrammesSection = () => {
                         }}
                     >
                         <Image
-                            src="/cityImages/nice.png"
+                            src="/cityImages/martigues.png"
                             alt="Nice"
                             fill
                             className="object-cover"
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-3">
-                            <h3 className="text-white font-bold text-lg">Nice</h3>
-                            <p className="text-white/80 text-xs">29 mars 2025</p>
+                            <h3 className="text-white font-bold text-lg">Martigues</h3>
+                            <p className="text-white/80 text-xs">07 Mars 2026</p>
                         </div>
                     </motion.div>
 
@@ -165,7 +165,7 @@ export const ProgrammesSection = () => {
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-3">
                             <h3 className="text-white font-bold text-base">Avignon</h3>
-                            <p className="text-white/80 text-xs">5 avril 2025</p>
+                            <p className="text-white/80 text-xs">28 Février 2026</p>
                         </div>
                     </motion.div>
 
@@ -189,7 +189,7 @@ export const ProgrammesSection = () => {
                         />
                         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-3">
                             <h3 className="text-white font-bold text-base">Toulon</h3>
-                            <p className="text-white/80 text-xs">22 mars 2025</p>
+                            <p className="text-white/80 text-xs">21 Février 2026</p>
                         </div>
                     </motion.div>
 
