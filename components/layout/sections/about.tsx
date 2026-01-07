@@ -44,7 +44,7 @@ export const AboutSection = () => {
     }, []);
 
     return (
-        <section id="about" className="container py-24 sm:py-32 relative overflow-hidden">
+        <section id="about" className="container p-1 relative overflow-hidden">
             {/* Effets de fond décoratifs */}
             <div className="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10"></div>
