@@ -53,7 +53,8 @@ export const FooterSection = () => {
                                 <Facebook className="w-4 h-4 text-background" />
                             </Link>
                             <Link
-                                href="#"
+                                href="https://www.instagram.com/j0_jdn"
+                                target="_blank"
                                 className="w-9 h-9 rounded-full bg-foreground flex items-center justify-center hover:bg-primary transition-colors"
                             >
                                 <Instagram className="w-4 h-4 text-background" />
