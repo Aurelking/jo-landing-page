@@ -135,7 +135,7 @@ export const ProgrammesSection = () => {
                     >
                         <Image
                             src="/cityImages/martigues.png"
-                            alt="Nice"
+                            alt="Martigues"
                             fill
                             className="object-cover"
                         />
