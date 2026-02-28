@@ -34,7 +34,7 @@ const getEventBadgeColor = (type: string) => {
 
 const nextEvent: CityEventProps = {
     city: "Marseille",
-    date: "31 Janvier 2026",
+    date: "21 Fevrier 2026",
     location: "Palais du Pharo",
     events: [
         {

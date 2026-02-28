@@ -1,13 +1,12 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { useTheme } from "next-themes";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Link from "next/link";
-import React, {useEffect, useState} from "react";
-import {Navbar} from "@/components/layout/navbar";
+import React, { useEffect, useState } from "react";
+import { Navbar } from "@/components/layout/navbar";
+import { motion } from "framer-motion";
 
 export const HeroSection = () => {
-    const { theme } = useTheme();
     const [showNavbar, setShowNavbar] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -34,39 +33,94 @@ export const HeroSection = () => {
     }, [lastScrollY]);
 
     return (
-        <section className="w-full">
+        <section className="w-full relative overflow-hidden">
             {/* Navbar flottante */}
             <div
                 className={`fixed top-0 left-0 right-0 z-50 pt-5 transition-transform duration-300 ease-in-out
-                ${showNavbar ? 'translate-y-0' : '-translate-y-full'}`}
+                ${showNavbar ? "translate-y-0" : "-translate-y-full"}`}
             >
                 <Navbar />
             </div>
 
-            <div className="container grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32 pt-52 md:pt-60">
-                <div className="text-center space-y-8">
-                    <div className="max-w-screen-md mx-auto text-center">
-                        <h1 className="mt-2 text-4xl md:text-6xl font-bold leading-tight">
+            {/* Background geometric accents */}
+            <div className="absolute inset-0 dot-pattern opacity-40 -z-10" />
+            <div className="absolute top-20 -right-32 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[100px] -z-10" />
+            <div className="absolute -bottom-20 -left-32 w-[400px] h-[400px] rounded-full bg-secondary/10 blur-[100px] -z-10" />
+
+            {/* Geometric decorative elements */}
+            <motion.div
+                className="absolute top-32 right-[15%] w-16 h-16 border-2 border-primary/15 rounded-lg -z-10"
+                animate={{ rotate: [0, 90, 180, 270, 360] }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.div
+                className="absolute bottom-48 left-[10%] w-8 h-8 bg-secondary/10 rounded-full -z-10"
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <motion.div
+                className="absolute top-[40%] left-[5%] w-3 h-3 bg-accent/20 rounded-full -z-10"
+                animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            />
+
+            <div className="container grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-28 pt-44 md:pt-52">
+                <div className="text-center space-y-8 max-w-4xl">
+                    {/* Badge */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                    >
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary uppercase tracking-widest bg-primary/8 px-5 py-2.5 rounded-full border border-primary/15">
+                            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+                            Mars 2026
+                        </span>
+                    </motion.div>
+
+                    {/* Titre principal */}
+                    <motion.div
+                        className="max-w-screen-md mx-auto"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: 0.1 }}
+                    >
+                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tighter">
                             JO 2026
                         </h1>
-                        <h2 className="mt-2 text-4xl md:text-6xl font-bold leading-tight">
+                        <h2 className="mt-3 text-3xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
                             {"Trouver "}
-                            <span className="text-transparent px-2 bg-gradient-to-r from-primary to-secondary bg-clip-text">
-                        sa force
-                    </span>
-                            {", révéler son avenir"}
+                            <span className="text-gradient">
+                                sa force
+                            </span>
+                            {","}
+                            <br className="hidden sm:block" />
+                            {" révéler son avenir"}
                         </h2>
-                    </div>
+                    </motion.div>
 
-                    <p className="max-w-screen-sm mx-auto text-xl text-muted-foreground">
-                        Une journée pour découvrir ton potentiel, clarifier ton projet et rencontrer ceux qui peuvent t'accompagner vers l'avenir.
-                    </p>
+                    {/* Description */}
+                    <motion.p
+                        className="max-w-screen-sm mx-auto text-lg md:text-xl text-muted-foreground leading-relaxed"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                        Une journée pour découvrir ton potentiel, clarifier ton projet et
+                        rencontrer ceux qui peuvent t'accompagner vers l'avenir.
+                    </motion.p>
 
-                    <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
+                    {/* CTA Buttons */}
+                    <motion.div
+                        className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.45 }}
+                    >
                         <Button
                             asChild
-                            variant="secondary"
-                            className="w-5/6 md:w-auto font-bold text-white group"
+                            size="lg"
+                            className="w-full sm:w-auto font-bold text-base px-8 py-6 bg-primary hover:bg-primary/90 text-white rounded-full shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all duration-300 group"
                         >
                             <Link
                                 href="#contact"
@@ -78,27 +132,48 @@ export const HeroSection = () => {
                         </Button>
 
                         <Button
-                            className="w-5/6 md:w-auto font-bold bg-neutral-100 text-black hover:bg-neutral-400 hover:text-white"
+                            asChild
+                            size="lg"
+                            variant="outline"
+                            className="w-full sm:w-auto font-bold text-base px-8 py-6 rounded-full border-2 border-foreground/15 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
                         >
-                            Nous soutenir
+                            <Link href="#about">
+                                En savoir plus
+                            </Link>
                         </Button>
+                    </motion.div>
+                </div>
+
+                {/* Video Section */}
+                <motion.div
+                    className="relative group mt-10 w-full max-w-5xl"
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                >
+                    {/* Glow effect behind video */}
+                    <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-2xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
+
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-primary/10 gradient-border">
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full rounded-2xl"
+                            src="/video.MOV"
+                        />
                     </div>
-                </div>
+                </motion.div>
 
-                <div className="relative group mt-14 w-full">
-                    <div className="absolute top-2 lg:-top-8 left-1/2 transform -translate-x-1/2 w-full mx-auto h-24 lg:h-80 bg-primary/50 rounded-full blur-3xl"></div>
-
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        controls={true}
-                        playsInline
-                        className="w-full md:w-[1300px] mx-auto rounded-lg relative leading-none border border-t-2 border-secondary border-t-primary/30"
-                        src="/video.MOV"
-                    />
-
-                </div>
+                {/* Scroll indicator */}
+                <motion.div
+                    className="mt-8"
+                    animate={{ y: [0, 8, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                >
+                    <ChevronDown className="w-6 h-6 text-muted-foreground/40" />
+                </motion.div>
             </div>
         </section>
     );

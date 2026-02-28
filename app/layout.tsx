@@ -1,16 +1,27 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sora, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import LogoJo from "@/public/logo-jo";
 import React from "react";
-const inter = Inter({ subsets: ["latin"] });
+
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
-  title: "orientation-JDN",
-  description: "Landing page des journées d'orientation",
+  title: "JO 2026 – Journées d'Orientation",
+  description: "Trouver sa force, révéler son avenir. Journées d'orientation par Jeunesse des Nations.",
 };
 
 export default function RootLayout({
@@ -19,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-white", inter.className)}>
+    <html lang="fr" suppressHydrationWarning>
+      <body className={cn("min-h-screen bg-background", sora.variable, dmSans.variable)}>
       <ThemeProvider
           attribute="class"
           defaultTheme="light"
