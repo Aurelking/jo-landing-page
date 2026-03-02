@@ -157,7 +157,7 @@ export const ContactSection = () => {
                                 <div>
                                     <div className="font-bold text-foreground mb-1">Horaires</div>
                                     <div className="text-muted-foreground">
-                                        13h - 17h
+                                        15h - 17h
                                     </div>
                                 </div>
                             </motion.div>
@@ -289,7 +289,7 @@ export const ContactSection = () => {
                                                 </div>
                                                 <div className="flex items-center gap-2.5 text-foreground">
                                                     <Clock className="w-4 h-4 text-secondary flex-shrink-0" />
-                                                    <span>13h - 17h</span>
+                                                    <span>15h - 17h</span>
                                                 </div>
                                                 <div className="flex items-center gap-2.5 text-foreground">
                                                     <MapPin className="w-4 h-4 text-accent flex-shrink-0" />

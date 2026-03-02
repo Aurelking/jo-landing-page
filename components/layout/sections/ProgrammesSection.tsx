@@ -5,6 +5,12 @@ import LogoJo from "@/public/logo-jo";
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import {
+    FloatingIcon,
+    GraduationCapIcon,
+    OpenBookIcon,
+    TargetGoalIcon,
+} from "@/components/orientation-icons";
 
 interface CityProps {
     image: string;
@@ -74,6 +80,24 @@ export const ProgrammesSection = () => {
                 {/* Background accents */}
                 <div className="absolute top-1/4 -left-20 w-72 h-72 bg-primary/6 rounded-full blur-[100px] -z-10" />
                 <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/6 rounded-full blur-[100px] -z-10" />
+
+                {/* Orientation floating decorations */}
+                <FloatingIcon
+                    icon={<OpenBookIcon size={44} className="text-primary/35" />}
+                    className="top-20 left-[4%] hidden lg:block"
+                    duration={8}
+                    delay={0.5}
+                    yRange={14}
+                    rotateRange={6}
+                />
+                <FloatingIcon
+                    icon={<TargetGoalIcon size={38} className="text-secondary/35" />}
+                    className="bottom-28 right-[5%] hidden lg:block"
+                    duration={9}
+                    delay={2}
+                    yRange={12}
+                    rotateRange={8}
+                />
 
                 <div className="text-center mb-16">
                     <motion.div
@@ -231,7 +255,7 @@ export const ProgrammesSection = () => {
                                     bg: "bg-primary/8",
                                     borderHover: "hover:border-primary/30",
                                     content: (
-                                        <p className="font-bold text-foreground text-lg">13h - 17h</p>
+                                        <p className="font-bold text-foreground text-lg">15h - 17h</p>
                                     ),
                                 },
                                 {
@@ -310,7 +334,7 @@ export const ProgrammesSection = () => {
                                             <Calendar size={18} className="text-primary mt-0.5 flex-shrink-0" />
                                             <div>
                                                 <p className="font-bold text-lg">{nextEvent.date}</p>
-                                                <p className="text-sm text-muted-foreground">13h - 17h</p>
+                                                <p className="text-sm text-muted-foreground">15h - 17h</p>
                                             </div>
                                         </div>
                                         <div className="flex items-start gap-3">

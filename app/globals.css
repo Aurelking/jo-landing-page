@@ -150,3 +150,28 @@ html {
     height: 1px;
     background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), hsl(var(--secondary) / 0.2), transparent);
 }
+
+/* Orientation path drawing animation */
+@keyframes draw-path {
+    0% { stroke-dashoffset: 200; }
+    100% { stroke-dashoffset: 0; }
+}
+
+.orientation-path-draw {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    animation: draw-path 3s ease-in-out forwards;
+}
+
+/* Subtle compass spin on hover */
+@keyframes compass-spin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(45deg); }
+    50% { transform: rotate(-15deg); }
+    75% { transform: rotate(20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.compass-hover:hover {
+    animation: compass-spin 1.5s ease-in-out;
+}

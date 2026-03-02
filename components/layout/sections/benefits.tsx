@@ -4,6 +4,12 @@ import { Icon } from "@/components/ui/icon";
 import { icons } from "lucide-react";
 import { motion } from "framer-motion";
 import React from "react";
+import {
+    FloatingIcon,
+    GraduationCapIcon,
+    CompassIcon,
+    LightbulbIdeaIcon,
+} from "@/components/orientation-icons";
 
 interface BenefitsProps {
     icon: string;
@@ -81,6 +87,24 @@ export const BenefitsSection = () => {
                 {/* Background accents */}
                 <div className="absolute top-1/4 -left-20 w-80 h-80 bg-primary/6 rounded-full blur-[100px] -z-10" />
                 <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/6 rounded-full blur-[100px] -z-10" />
+
+                {/* Orientation floating decorations */}
+                <FloatingIcon
+                    icon={<GraduationCapIcon size={42} className="text-primary/35" />}
+                    className="top-16 right-[8%] hidden lg:block"
+                    duration={9}
+                    delay={0.5}
+                    yRange={12}
+                    rotateRange={6}
+                />
+                <FloatingIcon
+                    icon={<LightbulbIdeaIcon size={36} className="text-secondary/35" />}
+                    className="bottom-20 left-[5%] hidden lg:block"
+                    duration={7}
+                    delay={1.5}
+                    yRange={14}
+                    rotateRange={10}
+                />
 
                 <div className="grid lg:grid-cols-2 place-items-center lg:gap-20 gap-16">
                     {/* Section texte */}

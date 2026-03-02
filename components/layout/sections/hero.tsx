@@ -5,6 +5,16 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { Navbar } from "@/components/layout/navbar";
 import { motion } from "framer-motion";
+import {
+    FloatingIcon,
+    GraduationCapIcon,
+    CompassIcon,
+    OpenBookIcon,
+    PathwayIcon,
+    LightbulbIdeaIcon,
+    RocketIcon,
+    TargetGoalIcon,
+} from "@/components/orientation-icons";
 
 export const HeroSection = () => {
     const [showNavbar, setShowNavbar] = useState(true);
@@ -47,21 +57,54 @@ export const HeroSection = () => {
             <div className="absolute top-20 -right-32 w-[500px] h-[500px] rounded-full bg-primary/8 blur-[100px] -z-10" />
             <div className="absolute -bottom-20 -left-32 w-[400px] h-[400px] rounded-full bg-secondary/10 blur-[100px] -z-10" />
 
-            {/* Geometric decorative elements */}
-            <motion.div
-                className="absolute top-32 right-[15%] w-16 h-16 border-2 border-primary/15 rounded-lg -z-10"
-                animate={{ rotate: [0, 90, 180, 270, 360] }}
-                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            {/* Orientation scolaire floating icons */}
+            <FloatingIcon
+                icon={<GraduationCapIcon size={48} className="text-primary/40" />}
+                className="top-28 right-[12%] hidden md:block"
+                duration={7}
+                delay={0}
+                yRange={18}
+                rotateRange={10}
             />
-            <motion.div
-                className="absolute bottom-48 left-[10%] w-8 h-8 bg-secondary/10 rounded-full -z-10"
-                animate={{ y: [0, -20, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            <FloatingIcon
+                icon={<CompassIcon size={44} className="text-secondary/40" />}
+                className="top-[38%] left-[6%] hidden md:block"
+                duration={8}
+                delay={1}
+                yRange={14}
+                rotateRange={12}
             />
-            <motion.div
-                className="absolute top-[40%] left-[5%] w-3 h-3 bg-accent/20 rounded-full -z-10"
-                animate={{ scale: [1, 1.5, 1], opacity: [0.3, 0.6, 0.3] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+            <FloatingIcon
+                icon={<OpenBookIcon size={36} className="text-accent/35" />}
+                className="bottom-52 left-[12%] hidden md:block"
+                duration={6}
+                delay={0.5}
+                yRange={12}
+                rotateRange={6}
+            />
+            <FloatingIcon
+                icon={<PathwayIcon size={38} className="text-primary/35" />}
+                className="bottom-40 right-[8%] hidden md:block"
+                duration={9}
+                delay={2}
+                yRange={16}
+                rotateRange={8}
+            />
+            <FloatingIcon
+                icon={<RocketIcon size={32} className="text-secondary/35" />}
+                className="top-[55%] right-[5%] hidden lg:block"
+                duration={7}
+                delay={1.5}
+                yRange={20}
+                rotateRange={15}
+            />
+            <FloatingIcon
+                icon={<TargetGoalIcon size={34} className="text-primary/30" />}
+                className="top-[22%] left-[18%] hidden lg:block"
+                duration={10}
+                delay={3}
+                yRange={10}
+                rotateRange={5}
             />
 
             <div className="container grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-28 pt-44 md:pt-52">

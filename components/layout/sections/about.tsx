@@ -3,6 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Sparkles, Users, Target, Lightbulb } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import {
+    FloatingIcon,
+    CompassIcon,
+    PathwayIcon,
+    RocketIcon,
+    TargetGoalIcon,
+} from "@/components/orientation-icons";
 
 const features = [
     {
@@ -40,6 +47,32 @@ export const AboutSection = () => {
                 {/* Background effects */}
                 <div className="absolute top-0 left-0 w-96 h-96 bg-primary/4 rounded-full blur-[120px] -z-10" />
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/4 rounded-full blur-[120px] -z-10" />
+
+                {/* Orientation floating decorations */}
+                <FloatingIcon
+                    icon={<CompassIcon size={50} className="text-primary/35" />}
+                    className="top-24 right-[6%] hidden lg:block"
+                    duration={10}
+                    delay={0}
+                    yRange={12}
+                    rotateRange={8}
+                />
+                <FloatingIcon
+                    icon={<PathwayIcon size={40} className="text-secondary/35" />}
+                    className="top-[45%] left-[3%] hidden lg:block"
+                    duration={8}
+                    delay={2}
+                    yRange={16}
+                    rotateRange={6}
+                />
+                <FloatingIcon
+                    icon={<RocketIcon size={36} className="text-accent/35" />}
+                    className="bottom-32 right-[10%] hidden lg:block"
+                    duration={7}
+                    delay={1}
+                    yRange={18}
+                    rotateRange={12}
+                />
 
                 {/* Section header */}
                 <motion.div
